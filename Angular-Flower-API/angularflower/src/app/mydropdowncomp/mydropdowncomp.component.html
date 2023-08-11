@@ -1,0 +1,41 @@
+<h1 class="text-center text-danger my-4">Dynamic Dropdown</h1>
+
+<div class="container text-center">
+    <div> 
+        <label for="choise"><h3 class="text-success">Select Your choise : </h3></label><br>
+        <select style="width: 350px;" class="btn btn-warning btn-outline-dark dropdown-toggle" id="choise" [(ngModel)]="myipval" (change)="clickingHere($event)">
+            <option value="none" disabled>None</option>
+            <option value="myname">Name</option>
+            <option value="myage">Age</option>
+            <option value="mygen">Gender</option>
+            <option value="myskill">Skills</option>
+        </select>
+    </div>
+    <br>
+    <div [ngSwitch]="myipval">
+        <div *ngSwitchCase="'myname'">
+            <h5>Name : </h5>
+            <input type="text" name="name">
+        </div>
+        <div *ngSwitchCase="'myage'">
+            <h5>Age : </h5>
+            <input type="number" name="age" min='1' max='100'>
+        </div>
+        <div *ngSwitchCase="'mygen'">
+            <h5>Gender : </h5>
+            <input type="radio" name="gender" value="male"> Male 
+            <input type="radio" name="gender" value="female"> Female 
+        </div>
+        <div *ngSwitchCase="'myskill'">
+            <h5>Skills : </h5>
+            <input type="checkbox" name="c" value="c"> C 
+            <input type="checkbox" name="cpp" value="cpp"> C++ 
+            <input type="checkbox" name="java" value="java"> Java 
+        </div>
+    </div>
+
+</div>
+
+<div class="text-center">
+    <a  class="btn btn-info btn-outline-dark text-center my-3" routerLink="/">Go Back</a>
+  </div>

@@ -1,0 +1,22 @@
+<h1 class="text-center text-danger m-4">Flower Card Page</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 my-3"  *ngFor="let flower of apiflowersinfo.flowerlist">
+      <div class="card shadow" style="width: 18rem;">
+        <img title="{{ flower.name }}" class="card-img-top" style="height: 250px;"
+          src="https://services.hanselandpetal.com/photos/{{ flower.photo }}"
+          alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text"><b>Name : {{ flower.name }}</b></p>
+          <p class="card-text">Price : ₹{{ flower.price }}</p>
+          <button class="btn btn-info btn-outline-dark" (click)="onflowerdet(flower.productId)">Get Details</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="text-center">
+  <a  class="btn btn-info btn-outline-dark text-center my-3" routerLink="/">Go Back</a>
+</div>
+
+

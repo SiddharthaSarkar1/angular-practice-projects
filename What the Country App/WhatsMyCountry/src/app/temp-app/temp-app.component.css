@@ -1,0 +1,63 @@
+section{
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+}
+.box{
+    margin-top: 50px;
+    width: 25vw;
+    height: 70vh;
+    border-radius: 0.5rem;
+    background: linear-gradient(rgb(137, 241, 96), rgb(236, 124, 236), rgb(135, 55, 226));
+    box-shadow: 3px 3px 22px -2px rgb(190, 185, 186);
+    font-family: 'Jost', sans-serif;
+}
+.inputData{
+    text-align: center;
+}
+
+.inputField{
+    margin-top: 16px;
+    height: 50px;
+    width: 75%;
+    border-radius: 32px;
+    outline: none;
+    border: 2px solid blueviolet;
+    font-size: 17px;
+    color: rgb(54, 3, 3);
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.info{
+    text-align: center;
+    margin: 22px;
+    padding: 10px;
+}
+
+.location{
+    margin: 22px;
+    font-size: 30px;
+    color: darkblue;
+}
+.temp{
+    margin: 22px;
+    font-size: 45px;
+    color: rgb(91, 19, 139);
+}
+
+.info h5,h4{
+    color: rgb(44, 4, 4);
+    margin-top: 24px;
+}
+
+
+.errcls{
+    text-align: center;
+    font-size: 25px;
+    color: darkred;
+}

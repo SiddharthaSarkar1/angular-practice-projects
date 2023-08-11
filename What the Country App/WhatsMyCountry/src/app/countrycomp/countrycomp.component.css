@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Potta+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
+section{
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+}
+
+.center{
+    background: rgb(252, 253, 251);
+    width: 60%;
+    height: 450px;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.flgimg{
+    height: 200px;
+    width: 350px;
+    border: 1px solid #000;
+}
+
+button{
+    width: 30%;
+    margin: 5px 15px;
+    padding: 5px;
+    font-size: 25px;
+    font-weight: 400;
+    background: rgb(169, 255, 99);
+    color: rgb(56, 2, 2);
+    border-radius: 10px;
+    outline: none;
+}
+
+.details{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    width: 60%;
+}
+.details input{
+    width: 85%;
+    margin: 10px auto;
+    height: 50px;
+    padding: 5px;
+    font-size: 25px;
+    font-weight: bold;
+    outline: none;
+    border-radius: 10px;
+}

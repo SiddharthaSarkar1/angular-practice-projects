@@ -1,0 +1,17 @@
+<section>
+    <div class="details">
+        <input type="text" #cname name="Cname" placeholder="Enter Your Country Name......">
+        <button (click)="getCountryName(cname.value)">Submit</button>
+    </div>
+    <div class="center" *ngIf="showsection">
+        <div class="imgdiv">
+            <img src="{{resultData[0].flags.png}}" alt="Your avatar image" class="flgimg">
+        </div>
+        <div class="countrydetails">
+            <h3>Official Name : {{resultData[0].name.official}}</h3>
+            <h3>Capital : {{resultData[0].capital}}</h3>
+            <h3>Region : {{resultData[0].region}}</h3>
+        </div>
+    </div>
+</section>
+

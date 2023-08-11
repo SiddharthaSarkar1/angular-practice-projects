@@ -1,0 +1,34 @@
+<h1 class="text-danger text-center my-4"> Fetch and Display Data From API </h1>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4 my-2" *ngFor="let data of resVal.entries">
+            <div class="card text-white bg-warning mb-3" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">API : {{ data.API }}</h5>
+                    <p class="card-text">Description : {{ data.Description }}</p>
+                    <p class="card-text">Link : {{ data.Link }}</p>
+                    <p class="card-text">Category : {{ data.Category }}</p>
+                    <p class="card-text">Auth : {{ data.Auth }}</p>
+                    <p class="card-text">HTTPS : {{ data.HTTPS }}</p>
+                    <p class="card-text">Cors : {{ data.Cors }}</p>
+                    <div>
+                        <h6 class="text-dark">HTTPS</h6>
+                        <ng-template [ngIf]="data.HTTPS == true">
+                            <input type="radio" name="https{{ data.API }}" [value]="'true'" checked>True
+                            <input type="radio" name="https{{ data.API }}" [value]="'false'" disabled>False
+                        </ng-template>
+                        <ng-template [ngIf]="data.HTTPS == false">
+                            <input type="radio" name="https{{ data.API }}" [value]="'true'" disabled>True
+                            <input type="radio" name="https{{ data.API }}" [value]="'false'" checked>False
+                        </ng-template>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="text-center">
+    <a class="btn btn-info btn-outline-dark text-center my-3" routerLink="/">Go Back</a>
+</div>

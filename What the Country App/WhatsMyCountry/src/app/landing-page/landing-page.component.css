@@ -1,0 +1,33 @@
+.container {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+    margin-top: 20vh;
+    height: 25rem;
+    width: 40rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.title {
+    font-size: 2.4rem;
+}
+
+.row {
+    margin: 1rem;
+    text-align: center;
+}
+.mybtn {
+    height: 2rem;
+    border-radius: 5px;
+    background: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.mybtn:hover{
+    background: rgb(39, 255, 201);
+    color: rgb(66, 0, 0); 
+}

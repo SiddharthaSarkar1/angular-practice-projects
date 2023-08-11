@@ -1,0 +1,21 @@
+<section>
+    <div class="box">
+        <div class="inputData">
+            <input type="search" class="inputField" #cityname (click)="getCityName(cityname.value)" />
+        </div>
+        <div *ngIf="!isFlag">
+            <p class="errcls">Enter Your City Name</p>
+        </div>                 
+
+        <div *ngIf="isFlag">
+        <div class="info">
+            <h1 class="location"><i class="fa fa-street-view" aria-hidden="true"></i>{{tempDataGet.name}}, {{tempDataGet.sys.country}}</h1>
+            <h1 class="temp">{{tempDataGet.main.temp}}° Cel</h1>
+            <h4>{{tempDataGet.weather[0].main}}</h4>
+            <h5>Feels Like : {{tempDataGet.main.feels_like}}° Cel</h5>
+            <h5>Min : {{tempDataGet.main.temp_min}}° Cel | Max : {{tempDataGet.main.temp_max}}° Cel</h5>
+            <h5>Humidity : {{tempDataGet.main.humidity}}%</h5>
+        </div>
+        </div>
+    </div>
+</section>

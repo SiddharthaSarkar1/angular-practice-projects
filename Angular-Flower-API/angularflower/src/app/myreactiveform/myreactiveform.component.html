@@ -1,0 +1,79 @@
+<h1 class="text-danger text-center my-5">Angular Reactive Form</h1>
+<div class="container">
+
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+        <label for="uname">Name:</label><br>
+        <input type="text" id="uname" formControlName="username" placeholder="Enter your username">
+        <br>
+        <span class="errstyl" *ngIf="username && username.invalid && username.touched">*Please enter a valid username.</span>
+        <br>
+        <label for="uemail">Email id:</label><br>
+        <input type="text" id="uemail" formControlName="email" placeholder="Enter tour email">
+        <br>
+        <span class="errstyl" *ngIf="email && email.invalid && email.touched">*Please enter a valid email address.</span>
+        <br>
+        <label for="uage">Age:</label><br>
+        <input type="number" min=1 max=100 id="uage" formControlName="age" placeholder="Age">
+        <br>
+        <span class="errstyl" *ngIf="age && age.invalid && age.touched">*Please enter a valid age.</span>
+        <br>
+        <p>Gender : </p>
+        <div *ngFor="let gender of genders">
+            <label><input type="radio" formControlName="gender" [value]="gender"> {{ gender }} </label>
+        </div>
+        <br>
+        <div>
+        <label for="bdw">Body Weight (between 10kg and 190kg) : </label><br>
+        <input style="width: 350px;" type="range" id="bdw" formControlName="bdw" min="10" max="190">
+        <br>
+        <p  class="text-primary">Your body weight : {{ signupForm.value.bdw }}kg</p>
+        <span class="errstyl" *ngIf="bdw && bdw.invalid && bdw.touched">*Please enter a valid body weight.</span>
+        </div>
+        <br>
+        <p>Skills : </p>
+        <div *ngFor="let s of skills">
+            <input type="checkbox" (change)="oncheckChange(s.id, $event)"> {{ s.name }}
+        </div>
+        <br>
+        <div formArrayName="hobbies">
+            <p>Your Hobbies : </p>
+            <button class="btb btn-sm btn-warning" type="button" (click)="onAddHobby()">Add Hobby</button>
+
+            <div *ngFor="let hobbyControl of hobbiesControls; let i = index">
+                <input type="text" [formControlName]="i">
+            </div>
+        </div>
+        <br>
+        <button class="btn btn-success btn-outline-dark" [disabled]="!signupForm.valid">Submit</button>&nbsp;&nbsp;
+        <button type="button" class="btn btn-dark" (click)="clickfrmre()">Reset</button>
+    </form>
+    <br>
+    <div>
+
+    </div>
+    <br>
+    <div *ngIf="isSubmittedform">
+        <hr>
+        <h3 class="text-danger"> :: Data You Have Entered ::</h3>
+        <p><b> Username : </b>{{ userdata.username }}</p>
+        <p><b>Email : </b>{{ userdata.email }}</p>
+        <p><b>Age : </b>{{ userdata.age }}</p>
+        <p><b>Body Weight(kg) : </b>{{ userdata.bdw }}</p>
+        <p><b>Gender : </b>{{ userdata.gender }}</p>
+        <div><b>Skills :</b>
+            <ul *ngFor="let skl of userdata.skills">
+                <li>{{ skills[(skl.id)-1].name }}</li>
+            </ul>
+        </div>
+        <div><b>Hobbies :</b>
+            <ul *ngFor="let hob of userdata.hobbies">
+                <li>{{ hob }}</li>
+            </ul>
+        </div>
+        <hr>
+    </div>
+</div>
+
+<div class="text-center">
+    <a class="btn btn-info btn-outline-dark text-center my-3" routerLink="/">Go Back</a>
+</div>
